@@ -4,12 +4,48 @@
     {
         static void Main(string[] args)
         {
-            // Задача 1) Вычислить n-ое треугольного число(сумма чисел от 1 до n), n!(произведение чисел от 1 до n)
+            // Задача 2) Вывести все простые числа от 1 до 1000
 
             int number = Input();
+            simpleNumbers(number);
 
-            Summa(number);
-            Factorial(number);
+
+            ///<summary>
+            ///Ищет и выводит на консоль все простые числа от 2 до заданного
+            /// </summary>
+            void simpleNumbers(int number)
+            {
+                List<int> simpleNumbers = new List<int>();
+                simpleNumbers.Add(2);
+
+                int actualRange = (int)Math.Sqrt(number) + 2; // актуальный диапазон чисел, который имеет смысл проверять
+
+                // собираем простые числа в список
+                for (int i = 3; i <= number; i += 2)
+                {
+                    bool isSimpleNumber = true;
+
+                    foreach (int simple in simpleNumbers)
+                    {
+                        if (simple > actualRange)
+                        {
+                            break;
+                        }
+                        if (i % simple == 0)
+                        {
+                            isSimpleNumber = false;
+                            break;
+                        }
+                    }
+                    if (isSimpleNumber == true)
+                    {
+                        simpleNumbers.Add(i);
+                    }
+                }
+                // вывод списка простых чисел на экран
+                Console.Write($"Все простые числа от 2 до {number}:\n[{String.Join(", ", simpleNumbers)}]\n");
+            }
+
 
 
             ///<summary>
@@ -30,26 +66,7 @@
                 }
             }
 
-            ///<summary>
-            ///Расчет суммы чисел от 1 до заданного по формуле Гауса
-            /// </summary>
-            void Summa(int number)
-            {
-                Console.WriteLine($"Сумма чисел от 1 до {number} равна: {(number * (number + 1)/2)}");
-            }
-
-            ///<summary>
-            ///Расчет факториала числа
-            /// </summary>
-            void Factorial(int number)
-            {
-                int fact = 1;
-                for (int i = 1; i <= number; i++)
-                {
-                    fact *= i;
-                }
-                Console.WriteLine($"Факториал числа равен: {fact}");
-            }
+            
         }
     }
 }
