@@ -27,28 +27,8 @@
             string sum = numbers[2];
 
             var firstTermQuestion = LookingForQuestion(firstTerm);
-            var secondTermQuestion = LookingForQuestion(secondTerm);          
-
+            var secondTermQuestion = LookingForQuestion(secondTerm);
             
-            ///<summary>
-            ///Кортеж. Проверяет, есть ли в слагаемом вопрос и, если есть, запоминает его индекс
-            ///</summary>
-            (bool question, int position) LookingForQuestion(string number)
-            {
-                bool question = false;
-                int position = 0;
-
-                for (int i = 0; i < number.Length; i++)
-                {
-                    if (number[i].ToString() == "?")
-                    {
-                        question = true;
-                        position = i + 1;
-                    }
-                }
-                return (question, position);
-            }
-
             if (firstTermQuestion.question == true && secondTermQuestion.question == true)
             {
                 int result1 = 0, result2 = 0;
@@ -71,6 +51,25 @@
                 {
                     Console.WriteLine("Решений может быть несколько или ни одного");
                 }
+            }
+            
+              ///<summary>
+            ///Кортеж. Проверяет, есть ли в слагаемом вопрос и, если есть, запоминает его индекс
+            ///</summary>
+            (bool question, int position) LookingForQuestion(string number)
+            {
+                bool question = false;
+                int position = 0;
+
+                for (int i = 0; i < number.Length; i++)
+                {
+                    if (number[i].ToString() == "?")
+                    {
+                        question = true;
+                        position = i + 1;
+                    }
+                }
+                return (question, position);
             }
         }
     }
