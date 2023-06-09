@@ -1,11 +1,13 @@
-﻿using System.Timers;
-
-namespace Lesson_1_dz
+﻿namespace Lesson_1_dz
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            // Я не могу проверить, правильно ли решена задача. Но по идее должна быть правильно.
+            // Ни с того ни с сего Студия перестала работать - запускает постоянно одно и то же, даже
+            // если удалить код полностью. Магия. Не знаю, что с этим делать.
+
             // Задача 4) (дополнительное задание) Задано уравнение вида q + w = e, q, w, e >= 0.
             // Некоторые цифры могут быть заменены знаком вопроса, например, 2? + ?5 = 69.
             // Требуется восстановить выражение до верного равенства.
@@ -25,7 +27,7 @@ namespace Lesson_1_dz
             var firstTermQuestion = LookingForQuestion(firstTerm);
             var secondTermQuestion = LookingForQuestion(secondTerm);          
 
-
+            
             ///<summary>
             ///Кортеж. Проверяет, есть ли в слагаемом вопрос и, если есть, запоминает его индекс
             ///</summary>
@@ -70,8 +72,6 @@ namespace Lesson_1_dz
                     Console.WriteLine("Решений может быть несколько или ни одного");
                 }
             }
-
-
         }
     }
 }
