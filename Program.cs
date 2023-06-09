@@ -56,9 +56,7 @@
                 if (firstTermQuestion.position == 1 && secondTermQuestion.position == 2)
                 {
                     result1 = Convert.ToInt32(sum[0]) - Convert.ToInt32(secondTerm[0]);
-                    Console.WriteLine(result1);
                     result2 = Convert.ToInt32(sum[1]) - Convert.ToInt32(secondTerm[1]);
-                    Console.WriteLine(result2);
                 }
                 if (firstTermQuestion.position == 2 && secondTermQuestion.position == 1)
                 {
